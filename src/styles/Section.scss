@@ -1,0 +1,95 @@
+@import "./colors";
+@import "./fonts";
+@import "./mixins";
+
+.section-div {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #f38181d8, #fce38ad8), url("../assets/eagle.png");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: inherit;
+
+    @include flex-center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .section-center {
+        @include flex-center;
+        flex-direction: column;
+        justify-content: space-around;
+        color: $white;
+        height: 450px;
+        // background-color: blue;
+
+        h3 {
+            font-family: $font-kaushan-script;
+            font-size: 45px;
+            font-weight: 200;
+        }
+        .two-texts {
+            @include flex-center;
+            flex-direction: column;
+
+            h1 {
+                font-size: 112px;
+                font-weight: bold;
+            }
+        }
+        .seprator {
+            width: 45px;
+            height: 3px;
+            background-color: $white;
+        }
+
+        .more-btn {
+            @include flex-center;
+            justify-content: center;
+            width: 120px;
+            height: 30px;
+            border: solid $white 3px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+                background-color: $white;
+                color: $red;
+            }
+        }
+    }
+    .section-footer {
+        @include flex-around;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 60px;
+        // background-color: blue;
+
+        .slider-container {
+            @include flex-around;
+            align-items: flex-start;
+            height: 50px;
+            flex-direction: column;
+            color: $white;
+            .max {
+                width: 210px;
+                height: 3px;
+                background-color: $white;
+                .value {
+                    width: 25%;
+                    height: inherit;
+                    background-color: $red;
+                }
+            }
+            .number {
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .name {
+                font-size: 14px;
+            }
+        }
+    }
+}

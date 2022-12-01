@@ -1,0 +1,43 @@
+@import "./colors";
+@import "./fonts";
+@import "./mixins";
+
+.header {
+    @include flex-center;
+    justify-content: space-between;
+    padding-top:30px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    color: $white;
+    // width:65%;
+    //1200px
+    width:100%;
+    // background-color: blue;
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .header-nav {
+        width: 620px;
+        width:50%;
+        // width: 500px;
+        .header-li {
+            @include flex-center;
+            justify-content: space-between;
+
+            a {
+                text-decoration: none;
+                font-size: 12px;
+                color: $white;
+                font-weight:400;
+
+                svg {
+                    font-size:18px;
+                }
+            }
+        }
+    }
+}
