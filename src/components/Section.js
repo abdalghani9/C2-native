@@ -6,7 +6,6 @@ import Signs from "./Signs";
 function Section() {
   return (
     <div className="section">
-      <Header />
       <div className="section-center">
         <h3>Createive Template</h3>
         <div className="two-texts">

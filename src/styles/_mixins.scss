@@ -16,10 +16,38 @@
     color: $light-gray;
 }
 
-@mixin large-padding {
-    @media (min-width: $large) {
+@mixin padding-xxlarge {
+    @media (min-width: $xxlarge) {
         padding-left: 270px;
         padding-right: 270px;
+    }
+}
+
+@mixin padding-xlarge {
+    @media (min-width: $xlarge) and (max-width: $xxlarge) {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+
+@mixin padding-large {
+    @media (min-width: $large) and (max-width: $xlarge) {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@mixin padding-medium {
+    @media (min-width: $medium) and (max-width: $large) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@mixin padding-small {
+    @media (min-width: 0px) and (max-width: $medium) {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -29,3 +57,5 @@
         background-color: red;
     }
 }
+
+
