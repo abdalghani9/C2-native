@@ -3,6 +3,7 @@
 @import "./mixins";
 
 .footer {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,7 +12,8 @@
     @include padding-large;
     @include padding-medium;
     @include padding-small;
-
+    padding-top:20px;
+    
     hr {
         opacity: 0.3;
     }

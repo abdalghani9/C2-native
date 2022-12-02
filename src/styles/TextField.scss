@@ -1,0 +1,39 @@
+@import "./colors";
+@import "./variables";
+
+.text-field {
+    width: 500px;
+    background-color: $white;
+    border: 2px solid $red;
+    padding: 0.5px;
+    border-radius: 5px;
+    margin: 5px;
+
+    @media (max-width: $medium) {
+        width: 250px;
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+
+        &:focus {
+            background-color: $yellow;
+        }
+    }
+
+    textarea {
+        height: 190px;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        resize: none;
+        &:focus {
+            background-color: $yellow;
+        }
+    }
+}

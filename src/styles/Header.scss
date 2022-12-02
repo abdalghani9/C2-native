@@ -6,11 +6,16 @@
     @include flex-center;
     justify-content: space-between;
     padding-top: 30px;
+    // customize header padding
+    @media (max-height: 500px) {
+        padding-top: 10px;
+    }
     position: fixed;
     top: 0;
     z-index: 20;
     color: $white;
     width: 100%;
+    transition: 0.5s;
 
     //padding for different screen sizes
     @include padding-xxlarge;
@@ -22,14 +27,17 @@
     .logo {
         font-size: 24px;
         font-weight: bold;
+        a {
+            text-decoration: none;
+            color: $white;
+        }
     }
 
+    // right menu start
     .right-menu {
-        
         @media (max-width: $medium) {
             width: auto;
         }
-        
         cursor: pointer;
         &:hover {
             color: $yellow;
@@ -47,7 +55,9 @@
             }
         }
     }
+    // right menu end
 
+    // nav bar  start
     .header-nav {
         // width: 620px;
         // width: 50%;
@@ -56,7 +66,7 @@
             @include flex-center;
             justify-content: space-between;
 
-            //mobile screen menu
+            //mobile screen menu start
             @media (max-width: $medium) {
                 height: 300px;
                 width: 100vw;
@@ -65,6 +75,12 @@
                 position: absolute;
                 right: -100vw;
                 top: 65px;
+                // customize mobile header
+                @media (max-height: 500px) {
+                    flex-direction: row;
+                    height: 100px;
+                    top: 55px;
+                }
                 padding: 20px;
                 display: none;
                 background-color: $red;
@@ -79,6 +95,7 @@
                     border-bottom-color: $red;
                 }
             }
+            //mobile screen menu end
 
             a {
                 text-decoration: none;
@@ -99,4 +116,12 @@
             }
         }
     }
+    // nav bar  end
+}
+
+// style header when scrolling
+.scroll {
+    background-color: $red;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

@@ -72,22 +72,22 @@
             }
         }
 
-        .more-btn {
-            @include flex-center;
-            justify-content: center;
-            width: 120px;
-            height: 30px;
-            border: solid $white 3px;
-            font-size: 11px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.5s;
-            margin: 20px;
-            &:hover {
-                background-color: $white;
-                color: $red;
-            }
-        }
+        // .more-btn {
+        //     @include flex-center;
+        //     justify-content: center;
+        //     width: 120px;
+        //     height: 30px;
+        //     border: solid $white 3px;
+        //     font-size: 11px;
+        //     font-weight: bold;
+        //     cursor: pointer;
+        //     transition: 0.5s;
+        //     margin: 20px;
+        //     &:hover {
+        //         background-color: $white;
+        //         color: $red;
+        //     }
+        // }
     }
 
     .section-footer {

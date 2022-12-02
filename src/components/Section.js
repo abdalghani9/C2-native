@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
 import Seprator from "./Seprator";
 import "../styles/Section.scss";
 import Signs from "./Signs";
+import {OutlinedButton} from "./Buttons";
 function Section() {
   return (
     <div className="section">
@@ -13,17 +13,23 @@ function Section() {
           <h1>TO MOGO</h1>
         </div>
         <Seprator color="white-sep" />
-        <div className="more-btn">LEARN MORE</div>
+        <OutlinedButton value="LEARN MORE"/>
       </div>
-      <div className="section-footer">
-        <Slider number="01" name="INTRO" value="value" />
-        <Slider number="02" name="WORK" />
-        <Slider number="03" name="ABOUT" />
-        <Slider number="04" name="CONTACT" />
-      </div>
+      <SectionFooter />
     </div>
   );
 }
+
+const SectionFooter = () => {
+  return (
+    <div className="section-footer">
+      <Slider number="01" name="INTRO" value="value" />
+      <Slider number="02" name="WORK" />
+      <Slider number="03" name="ABOUT" />
+      <Slider number="04" name="CONTACT" />
+    </div>
+  );
+};
 
 const Slider = (props) => {
   return (
@@ -31,10 +37,6 @@ const Slider = (props) => {
       <div className="max">
         <div className={props.value}></div>
       </div>
-      {/* <div className="description">
-        <span className="number">{props.number} </span>
-        <span className="name"> {props.name} </span>
-      </div> */}
       <Signs {...props} />
     </div>
   );

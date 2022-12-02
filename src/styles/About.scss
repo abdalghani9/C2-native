@@ -36,19 +36,19 @@
         font-family: $font-kaushan-script;
         color: $black;
         font-size: 23px;
-        padding:10px;
+        padding: 10px;
     }
 
     h1 {
         color: $black;
-        padding:10px;
+        padding: 10px;
     }
 
     p {
         @include p-roboto;
         text-align: center;
         padding: 0 50px;
-        padding:10px;
+        padding: 10px;
     }
 
     .about-images {
@@ -73,13 +73,36 @@
             padding-top: 20px;
             padding-bottom: 20px;
         }
+
         .image-container {
-            width: 280;
+            width: 280px;
             height: 180px;
 
             img {
                 height: 100%;
                 width: 100%;
+            }
+
+            .first {
+                background-image: linear-gradient(to bottom, #f38181d8, #fce38ad8), url("../assets/pc.png");
+                background-size: contain;
+                box-shadow: 8px 8px $light-green;
+                width: 280px;
+                height: 172px;
+                height: 96%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+
+                h3 {
+                    font-family: $font-montserrat !important;
+                    font-weight: bold;
+                    color: $white;
+                    font-size:14px;
+                }
             }
         }
     }
