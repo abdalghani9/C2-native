@@ -1,3 +1,5 @@
+@import "./variables";
+
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -6,4 +8,24 @@
 @mixin flex-around {
     display: flex;
     justify-content: space-around;
+}
+
+@mixin p-roboto {
+    font-family: $font-roboto;
+    font-size: 14px;
+    color: $light-gray;
+}
+
+@mixin large-padding {
+    @media (min-width: $large) {
+        padding-left: 270px;
+        padding-right: 270px;
+    }
+}
+
+@mixin medium {
+    @media (max-width: $medium) {
+        height: 560px;
+        background-color: red;
+    }
 }

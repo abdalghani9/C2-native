@@ -1,0 +1,14 @@
+@import "./colors";
+
+.seprator {
+    width: 45px;
+    height: 3px;
+}
+
+.white-sep {
+    background-color: $white;
+}
+
+.red-sep {
+    background-color: $red;
+}

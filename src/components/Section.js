@@ -1,9 +1,11 @@
 import React from "react";
 import Header from "./Header";
+import Seprator from "./Seprator";
 import "../styles/Section.scss";
+import Signs from "./Signs";
 function Section() {
   return (
-    <div className="section-div">
+    <div className="section">
       <Header />
       <div className="section-center">
         <h3>Createive Template</h3>
@@ -11,7 +13,7 @@ function Section() {
           <h1>WELCOME</h1>
           <h1>TO MOGO</h1>
         </div>
-        <div className="seprator"></div>
+        <Seprator color="white-sep" />
         <div className="more-btn">LEARN MORE</div>
       </div>
       <div className="section-footer">
@@ -24,16 +26,17 @@ function Section() {
   );
 }
 
-let Slider = (props) => {
+const Slider = (props) => {
   return (
     <div className="slider-container">
       <div className="max">
         <div className={props.value}></div>
       </div>
-      <div className="description">
-          <span className="number">{props.number} </span>
+      {/* <div className="description">
+        <span className="number">{props.number} </span>
         <span className="name"> {props.name} </span>
-      </div>
+      </div> */}
+      <Signs {...props} />
     </div>
   );
 };

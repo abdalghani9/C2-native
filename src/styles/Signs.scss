@@ -1,0 +1,12 @@
+@import "./fonts";
+@import "./colors";
+
+.signs {
+    .number {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .name {
+        font-size: 14px;
+    }
+}

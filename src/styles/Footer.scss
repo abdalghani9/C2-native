@@ -1,0 +1,145 @@
+@import "./fonts";
+@import "./colors";
+@import "./mixins";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include padding;
+
+    hr {
+        opacity: 0.3;
+    }
+
+    .top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .left {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 280px;
+
+            @media (max-width: $medium) {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                height: 250px;
+            }
+
+            .mogo {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 140px;
+
+                h1 {
+                    color: $light-gray;
+                    font-weight: bold;
+                    font-size: 35px;
+                }
+
+                .lorem {
+                    @include p-roboto;
+                }
+            }
+
+            .followers {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 70px;
+
+                .followers-title {
+                    color: $black;
+                    font-size: 12px;
+
+                    b {
+                        font-size: 16px;
+                    }
+                }
+
+                .follow-us {
+                    display: flex;
+
+                    @media (max-width: $small) {
+                        justify-content: space-around;
+                        width: 250px;
+                    }
+
+                    h3 {
+                        font-family: $font-roboto;
+                        font-size: 14px;
+                        font-style: italic;
+                        color: $light-gray;
+                    }
+                    .social-icons {
+                        display: flex;
+                        justify-content: space-around;
+                        width: 60%;
+
+                        svg {
+                            color: $light-green;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 400px;
+
+            @media (max-width: $medium) {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 350px;
+            }
+
+            h3 {
+                font-size: 12px;
+                color: $gray;
+            }
+
+            .images {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 2px;
+            }
+
+            a {
+                font-family: $font-roboto;
+                color: gray;
+                font-size: 12px;
+                font-style: italic;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .bottom {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        a {
+            color: $black;
+            font-family: $font-montserrat;
+            font-size: 12px;
+
+            span {
+                color: $red;
+            }
+        }
+    }
+}
