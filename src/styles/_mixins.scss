@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./colors";
 
 @mixin flex-center {
     display: flex;
@@ -10,12 +11,14 @@
     justify-content: space-around;
 }
 
+// roboto font style
 @mixin p-roboto {
     font-family: $font-roboto;
     font-size: 14px;
     color: $light-gray;
 }
 
+// break points for responsive screens start
 @mixin padding-xxlarge {
     @media (min-width: $xxlarge) {
         padding-left: 270px;
@@ -30,6 +33,9 @@
     }
 }
 
+// break points for responsive screens end
+
+// padding for different screens start
 @mixin padding-large {
     @media (min-width: $large) and (max-width: $xlarge) {
         padding-left: 80px;
@@ -51,6 +57,9 @@
     }
 }
 
+// padding for different screens end
+
+// style for medium screen
 @mixin medium {
     @media (max-width: $medium) {
         height: 560px;
@@ -58,6 +67,30 @@
     }
 }
 
+//background  colors for components
+@mixin bg-colors {
+    .bg-black {
+        background-color: $black;
+    }
+
+    .bg-red {
+        background-color: $red;
+    }
+
+    .bg-white {
+        background-color: $white;
+    }
+
+    .bg-yellow {
+        background-color: $yellow;
+    }
+
+    .bg-green {
+        background-color: $light-green;
+    }
+}
+
+// colors for components
 @mixin colors {
     .black {
         color: $black;
@@ -73,5 +106,20 @@
 
     .yellow {
         color: $yellow;
+    }
+
+    .green {
+        color: $light-green;
+    }
+}
+
+// responsive width for components
+@mixin responsive-width {
+    @media (min-width: $small) {
+        width: 500px;
+    }
+
+    @media (max-width: $small) {
+        width: 250px;
     }
 }

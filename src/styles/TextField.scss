@@ -1,19 +1,17 @@
 @import "./colors";
 @import "./variables";
+@import "./mixins";
 
 .text-field-container {
     margin: 5px;
     .text-field {
-        width: 500px;
         background-color: $white;
         border: 2px solid $red;
         padding: 0.5px;
         border-radius: 5px;
         margin: 5px;
 
-        @media (max-width: $small) {
-            width: 250px;
-        }
+        @include responsive-width;
 
         input {
             height: 100%;
@@ -22,8 +20,16 @@
             border: none;
             outline: none;
 
-            &:focus {
+            &:focus(:not([type="submit"])) {
                 background-color: $yellow;
+            }
+
+            &[type="submit"] {
+                &:hover,
+                &:focus {
+                    background-color: $red;
+                    color: $white;
+                }
             }
         }
 
@@ -34,6 +40,9 @@
             border: none;
             outline: none;
             resize: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             &:focus {
                 background-color: $yellow;
             }
