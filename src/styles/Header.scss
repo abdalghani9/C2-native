@@ -75,17 +75,19 @@
                 position: absolute;
                 right: -100vw;
                 top: 65px;
+                padding: 20px;
+                display: none;
+                background-color: $red;
+                box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.147);
+                transition: 0.3s;
+
                 // customize mobile header
                 @media (max-height: 500px) {
                     flex-direction: row;
                     height: 100px;
                     top: 55px;
                 }
-                padding: 20px;
-                display: none;
-                background-color: $red;
-                box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.147);
-                transition: 0.3s;
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -124,4 +126,15 @@
     background-color: $red;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    // change mobile menu position when scrolling
+    .right-menu {
+        .header-nav {
+            .header-li {
+                @media (max-width: $medium) {
+                    top: 50px;
+                }
+            }
+        }
+    }
 }

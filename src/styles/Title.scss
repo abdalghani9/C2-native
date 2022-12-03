@@ -1,0 +1,21 @@
+@import "./colors";
+@import "./mixins";
+
+.title {
+    
+    padding: 5px;
+
+    .big {
+        font-size: 28px;
+    }
+
+    .medium {
+        font-size: 26px;
+    }
+
+    .small {
+        font-size: 18px;
+    }
+
+    @include colors;
+}

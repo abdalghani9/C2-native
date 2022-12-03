@@ -101,7 +101,7 @@
                     font-family: $font-montserrat !important;
                     font-weight: bold;
                     color: $white;
-                    font-size:14px;
+                    font-size: 14px;
                 }
             }
         }
@@ -140,9 +140,12 @@
                 justify-content: center;
                 text-align: center;
                 color: $white;
-                border-right: 1px solid $white-trans;
-                &:first-child {
-                    border-left: 1px solid $white-trans;
+
+                @media (min-width: 769px) {
+                    border-right: 1px solid $white-trans;
+                    &:first-child {
+                        border-left: 1px solid $white-trans;
+                    }
                 }
 
                 @media (max-width: $medium) {

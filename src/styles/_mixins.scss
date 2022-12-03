@@ -58,4 +58,20 @@
     }
 }
 
+@mixin colors {
+    .black {
+        color: $black;
+    }
 
+    .red {
+        color: $red;
+    }
+
+    .white {
+        color: $white;
+    }
+
+    .yellow {
+        color: $yellow;
+    }
+}

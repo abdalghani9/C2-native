@@ -2,24 +2,28 @@ import React from "react";
 import "../styles/TextField.scss";
 
 function TextField(props) {
-  if (props.type !== "textarea") {
-    return (
+  return (
+    <div className="text-field-container">
+      <label className={props.color}>{props.label}</label>
       <div className="text-field">
-        <input {...props} type={props.type} placeholder={props.hint} required />
+        {props.type !== "textarea" ? (
+          <input
+            type={props.type}
+            placeholder={props.hint}
+            required
+            {...props}
+          />
+        ) : (
+          <textarea
+            type={props.type}
+            placeholder={props.hint}
+            required
+            {...props}
+          ></textarea>
+        )}
       </div>
-    );
-  } else {
-    return (
-      <div className="text-field">
-        <textarea
-          {...props}
-          type={props.type}
-          placeholder={props.hint}
-          required
-        ></textarea>
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default TextField;
