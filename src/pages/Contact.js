@@ -11,12 +11,13 @@ function Contact() {
   const [message, setMessage] = useState("");
 
   const send = () => {
-    Axios.post("http://localhost:3000/contact/send", {
+    Axios.post("http://localhost:3001/send", {
       uname: name,
       email: email,
       message: message,
     }).then((response) => {
       console.log(response);
+      alert("send succsefuly");
     });
   };
 
