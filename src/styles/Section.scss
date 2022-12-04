@@ -8,6 +8,7 @@
     background-image: linear-gradient(to bottom, #f38181d8, #fce38ad8), url("../assets/eagle.png");
     background-attachment: fixed;
     background-size: cover;
+    padding-top: 150px;
 
     //padding for different screen sizes
     @include padding-xxlarge;
@@ -15,11 +16,7 @@
     @include padding-large;
     @include padding-medium;
     @include padding-small;
-    @include flex-center;
-
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 150px;
+    @include flex(column, center, space-evenly);
 
     // solving elements conflict issues
     @media (max-height: 500px) {
@@ -28,16 +25,19 @@
     }
 
     .section-center {
-        @include flex-center;
-        flex-direction: column;
-        justify-content: space-around;
         color: $white;
+
+        @include flex(column, center, space-around);
 
         h3 {
             font-family: $font-kaushan-script;
             font-size: 45px;
             font-weight: 200;
             padding: 10px;
+            animation: move 3s infinite;
+            transition: 0.3s;
+
+            @include scale-animation(move);
 
             @media (max-width: $medium) {
                 font-size: 40px;
@@ -50,11 +50,11 @@
                 font-size: 4vh;
             }
         }
+        // creative template text and welcome to mogo
 
         .two-texts {
-            @include flex-center;
-            flex-direction: column;
             padding: 10px;
+            @include flex(column, center);
 
             h1 {
                 font-size: 112px;
@@ -72,36 +72,17 @@
                 }
             }
         }
-
-        // .more-btn {
-        //     @include flex-center;
-        //     justify-content: center;
-        //     width: 120px;
-        //     height: 30px;
-        //     border: solid $white 3px;
-        //     font-size: 11px;
-        //     font-weight: bold;
-        //     cursor: pointer;
-        //     transition: 0.5s;
-        //     margin: 20px;
-        //     &:hover {
-        //         background-color: $white;
-        //         color: $red;
-        //     }
-        // }
     }
 
     .section-footer {
-        @include flex-around;
-        flex-wrap: wrap;
         width: 100%;
         padding: 20px 0;
+        @include flex(initial, initial, space-around, wrap);
 
         .slider-container {
-            @include flex-around;
-            align-items: flex-start;
-            flex-direction: column;
             color: $white;
+            @include flex(column, flex-start, space-around);
+
             .max {
                 width: 210px;
                 height: 3px;

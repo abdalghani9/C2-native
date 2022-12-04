@@ -20,8 +20,10 @@
             border: none;
             outline: none;
 
-            &:focus(:not([type="submit"])) {
-                background-color: $yellow;
+            &:not([type="submit"]) {
+                &:focus {
+                    background-color: $yellow;
+                }
             }
 
             &[type="submit"] {

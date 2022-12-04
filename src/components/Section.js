@@ -2,7 +2,7 @@ import React from "react";
 import Seprator from "./Seprator";
 import "../styles/Section.scss";
 import Signs from "./Signs";
-import {OutlinedButton} from "./Buttons";
+import { OutlinedButton } from "./Buttons";
 function Section() {
   return (
     <div className="section">
@@ -13,7 +13,7 @@ function Section() {
           <h1>TO MOGO</h1>
         </div>
         <Seprator color="white-sep" />
-        <OutlinedButton value="LEARN MORE"/>
+        <OutlinedButton value="LEARN MORE" />
       </div>
       <SectionFooter />
     </div>

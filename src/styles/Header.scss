@@ -3,9 +3,9 @@
 @import "./mixins";
 
 .header {
-    @include flex-center;
-    justify-content: space-between;
     padding-top: 30px;
+    @include flex(initial, center, space-between);
+
     // customize header padding
     @media (max-height: 500px) {
         padding-top: 10px;
@@ -63,15 +63,13 @@
         // width: 50%;
 
         .header-li {
-            @include flex-center;
-            justify-content: space-between;
+            @include flex(initial, center, space-between);
 
             //mobile screen menu start
             @media (max-width: $medium) {
+                flex-direction: column;
                 height: 300px;
                 width: 100vw;
-                display: flex;
-                flex-direction: column;
                 position: absolute;
                 right: -100vw;
                 top: 65px;

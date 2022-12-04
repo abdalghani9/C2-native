@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Title from "../components/Title";
 import TextField from "../components/TextField";
 // import Popup from "../components/Popup";
-import { Close } from "@material-ui/icons";
+import { CheckCircle, Close } from "@material-ui/icons";
 import { OutlinedButton } from "../components/Buttons";
 import Axios from "axios";
 import "../styles/Contact.scss";
@@ -27,7 +27,7 @@ function Contact() {
   const send = (e) => {
     e.preventDefault();
 
-    // form validation 
+    // form validation
     if (name.length < 3) {
       setStatus("Name should be more than 2 charactares");
     } else if (!isNaN(name)) {
@@ -71,7 +71,8 @@ function Contact() {
             >
               <Close />
             </span>
-            <Title text="Thanks !" color="red" />
+            <Title text="Thanks !" color="red" size="medium" />
+            <CheckCircle style={{ color: "#808080", fontSize: "30px" }} />
             <p className="popup-text">
               Your message has been sent successfully ! we will get back within
               24 hours
