@@ -152,3 +152,8 @@
         }
     }
 }
+
+//gradient background
+@mixin gradient-background($direction: to bottom, $color1: $red, $color2: $yellow) {
+    background-image: linear-gradient($direction, $color1, $color2);
+}

@@ -31,6 +31,7 @@
     //we do start
     .we-do {
         width: 100%;
+        text-align: center;
 
         @include flex(column, center, space-between);
         @include padding-xxlarge;
@@ -47,26 +48,28 @@
 
     .about-images {
         width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         @include padding-xxlarge;
         @include padding-xlarge;
         @include padding-large;
         @include padding-medium;
         @include padding-small;
-        @include flex(row, center, space-evenly, wrap);
+        @include flex(row, center, space-between, wrap);
+
+        @media (max-width: $large) {
+            justify-content: space-evenly;
+        }
 
         @media (max-width: $small) {
-            height: 700px;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            height: 500px;
         }
 
         .image-container {
-            width: 280px;
-            height: 180px;
-
+            width: 260px;
+            height: 160px;
+            padding: 5px;
             img {
                 height: 100%;
                 width: 100%;
@@ -74,8 +77,8 @@
             // first image start
             .first {
                 background-image: linear-gradient(to bottom, #f38181d8, #fce38ad8), url("../assets/pc.png");
+                background-size: cover;
                 color: $white;
-                background-size: contain;
                 box-shadow: 8px 8px $light-green;
                 height: 96%;
                 width: 100%;

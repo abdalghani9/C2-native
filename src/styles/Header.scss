@@ -12,7 +12,7 @@
     }
     position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 98;
     color: $white;
     width: 100%;
     transition: 0.5s;
@@ -78,6 +78,8 @@
                 background-color: $red;
                 box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.147);
                 transition: 0.3s;
+                border: 1px dashed $white;
+                @include gradient-background(-45deg);
 
                 // customize mobile header
                 @media (max-height: 500px) {
@@ -92,7 +94,7 @@
                     right: 15px;
                     top: -20px;
                     border: 10px solid transparent;
-                    border-bottom-color: $red;
+                    border-bottom-color: $white;
                 }
             }
             //mobile screen menu end
@@ -102,13 +104,12 @@
                 font-size: 12px;
                 color: $white;
                 font-weight: 400;
-                width: 50%;
+                width: 100%;
                 text-align: center;
                 padding: 10px;
                 transition: 0.3s;
                 &:hover {
-                    background-color: $yellow;
-                    color: $red;
+                    background-color: $red;
                 }
                 svg {
                     font-size: 18px;
@@ -122,9 +123,9 @@
 // style header when scrolling
 .scroll {
     background-color: $red;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.147);
     // change mobile menu position when scrolling
     .right-menu {
         .header-nav {

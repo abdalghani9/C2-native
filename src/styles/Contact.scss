@@ -2,10 +2,12 @@
 @import "./mixins";
 @import "./variables";
 .contact {
-    @include flex(column, center, center);
     background-color: $red;
     padding-top: 100px;
     height: 100vh;
+
+    @include flex(column, center, center);
+    @include gradient-background;
 
     @media (max-width: $medium) {
         padding-top: 80px;
