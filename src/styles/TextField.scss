@@ -40,9 +40,9 @@
             border: none;
             outline: none;
             resize: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+            @include flex(initial, center, center);
+
             &:focus {
                 background-color: $yellow;
             }

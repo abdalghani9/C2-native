@@ -1,15 +1,17 @@
 @import "./colors";
 @import "./mixins";
-
+@import "./variables";
 .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column, center, center);
     background-color: $red;
-    padding-top: 150px;
-    height:100vh;
-    
+    padding-top: 100px;
+    height: 100vh;
+
+    @media (max-width: $medium) {
+        padding-top: 80px;
+        padding-bottom: 10px;
+    }
+
     // solving elements conflict issues
     @media (max-height: 500px) {
         padding-top: 80px;

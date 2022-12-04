@@ -3,32 +3,27 @@
 @import "./mixins";
 
 .footer {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(column, initial, space-between);
     @include padding-xxlarge;
     @include padding-xlarge;
     @include padding-large;
     @include padding-medium;
     @include padding-small;
-    padding-top:20px;
-    
+    padding-top: 20px;
+
     hr {
         opacity: 0.3;
     }
 
     .top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        @include flex(row, initial, space-between, wrap);
 
+        //footer left side start
         .left {
             width: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             height: 280px;
+
+            @include flex(column, initial, space-between);
 
             @media (max-width: $medium) {
                 align-items: center;
@@ -42,11 +37,8 @@
             }
 
             .mogo {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
                 height: 140px;
-
+                @include flex(column, initial, space-between);
                 @media (max-width: $medium) {
                     height: 120px;
                 }
@@ -61,12 +53,10 @@
                     @include p-roboto;
                 }
             }
-
+            //followers start
             .followers {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
                 height: 70px;
+                @include flex(column, initial, space-around);
 
                 .followers-title {
                     color: $black;
@@ -103,20 +93,20 @@
                     }
                 }
             }
+            //followers end
         }
+        //footer left side end
 
+        //footer right side start
         .right {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
             height: 400px;
-
+            @include flex(column, initial, space-evenly);
             @media (max-width: $medium) {
                 align-items: center;
                 text-align: center;
                 width: 100%;
-                padding-top:20px;
-                padding-bottom:20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
             }
 
             h3 {
@@ -138,15 +128,17 @@
                 text-decoration: none;
             }
         }
+        //footer right side end
     }
 
+    // footer bottom, copyright start
     .bottom {
         margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 10px;
         text-align: center;
+
+        @include flex(initial, center, center);
+
         a {
             color: $black;
             font-family: $font-montserrat;
@@ -157,4 +149,5 @@
             }
         }
     }
+    // footer bottom, copyright end
 }

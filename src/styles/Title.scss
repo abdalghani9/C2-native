@@ -2,8 +2,9 @@
 @import "./mixins";
 
 .title {
-    
     padding: 5px;
+    text-align: center;
+    @include colors;
 
     .big {
         font-size: 28px;
@@ -16,6 +17,4 @@
     .small {
         font-size: 18px;
     }
-
-    @include colors;
 }

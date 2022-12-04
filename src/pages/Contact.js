@@ -15,19 +15,31 @@ function Contact() {
   const [status, setStatus] = useState();
   const [show, setShow] = useState(false);
 
+  const specialChars = /[^a-zA-Z0-9.,]/g;
+
+  const clearFileds = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+    setStatus();
+  };
+
   const send = (e) => {
     e.preventDefault();
 
+    // form validation 
     if (name.length < 3) {
       setStatus("Name should be more than 2 charactares");
     } else if (!isNaN(name)) {
       setStatus("Name should be a string");
-      console.log(!isNaN(name));
     } else if (message.length < 100) {
       setStatus("The message body should be more than 100 charactares");
-    } else if (message.includes("<") ) {
-      setStatus("The message body should be valid charactares");
-    }  else {
+    } else if (specialChars.test(message)) {
+      setStatus(
+        "The message body should be a valid charactares. for e.g not contain (/ # $ % & ^ > <)"
+      );
+      console.log(specialChars.test(message));
+    } else {
       Axios.post("http://localhost:3001/send", {
         uname: name,
         email,
@@ -35,21 +47,19 @@ function Contact() {
       })
         .then(function (response) {
           if (response.status === 200) {
+            clearFileds();
             setShow(true);
-            setName("");
-            setEmail("");
-            setMessage("");
-            setStatus();
           }
         })
         .catch(function (err) {
-          setStatus("Error Please try again !");
+          setStatus("Error. Please try again !");
         });
     }
   };
 
   return (
     <div className="contact">
+      {/* Show popup window when message send  */}
       {show && (
         <div className="overlay">
           <div className={`popup-container black bg-yellow`}>
@@ -75,14 +85,20 @@ function Contact() {
           </div>
         </div>
       )}
+
+      {/* contact form start  */}
       <Title size="big" color="white" text="Contact" />
-      <h4 style={{ color: "#e91e63" }}>{status}</h4>
+      <h4
+        style={{ color: "#e91e63", textAlign: "center", padding: "10px 30px" }}
+      >
+        {status}
+      </h4>
       <form onSubmit={send}>
         <TextField
           label="Your name"
           type="text"
           hint="Name"
-          size="20"
+          maxLength="20"
           value={name}
           onChange={(e) => {
             setName(e.target.value);

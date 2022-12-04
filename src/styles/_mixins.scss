@@ -123,3 +123,13 @@
         width: 250px;
     }
 }
+
+// display flex configration
+
+@mixin flex($flex-direction: initial, $align-items: initial, $justify-content: initial, $wrap: initial) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-wrap: $wrap;
+}
