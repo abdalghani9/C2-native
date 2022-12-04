@@ -15,7 +15,7 @@ function Contact() {
   const [status, setStatus] = useState();
   const [show, setShow] = useState(false);
 
-  const specialChars = /[^a-zA-Z0-9.,]/g;
+  const specialChars = /[^a-zA-Z0-9. ,]/g;
 
   const clearFileds = () => {
     setName("");
