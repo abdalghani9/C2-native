@@ -40,11 +40,15 @@ function Contact() {
       );
       console.log(specialChars.test(message));
     } else {
-      Axios.post("http://localhost:3001/send", {
-        uname: name,
-        email,
-        message,
-      })
+      Axios.post(
+        "https://c2-native-server-965g-cz2mpr01k-abdalghani9.vercel.app/send",
+        {
+          //"http://localhost:3001/send"
+          uname: name,
+          email,
+          message,
+        }
+      )
         .then(function (response) {
           if (response.status === 200) {
             clearFileds();
