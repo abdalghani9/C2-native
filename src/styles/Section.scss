@@ -9,6 +9,11 @@
     background-attachment: fixed;
     background-size: cover;
     padding-top: 150px;
+    transition:0.4s;
+
+    @media (max-width: $medium) {
+        padding-top: 80px;
+    }
 
     //padding for different screen sizes
     @include padding-xxlarge;
