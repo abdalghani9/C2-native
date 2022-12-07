@@ -48,8 +48,8 @@
 
     .about-images {
         width: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 50px;
+        padding-bottom: 50px;
 
         @include padding-xxlarge;
         @include padding-xlarge;
@@ -60,6 +60,8 @@
 
         @media (max-width: $large) {
             justify-content: space-evenly;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         @media (max-width: $small) {

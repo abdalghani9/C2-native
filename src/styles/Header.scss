@@ -109,7 +109,8 @@
                 padding: 10px;
                 transition: 0.3s;
                 &:hover {
-                    background-color: $red;
+                    background-color: $yellow;
+                    color:$red;
                 }
                 svg {
                     font-size: 18px;
